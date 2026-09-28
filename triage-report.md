@@ -1,30 +1,20 @@
 # KijaniKiosk API Server - Triage Report
-**Date:** 27-9-2026
-**Investigated by:** [Michael Masai]
-**Server:**[hostname or IP]
-**Incident start (approximate):** [time from log evidence]
+**Date:** [28/09]
+**Investigated by:** [MIchael Masai]
+**Server:**[michael-HP-Envy-x360-2-in-1-Laptop-14-es0xxx]
+**Incident start (approximate):** [04:07 on 2024-01-15]
 
 ## Summary[2-3 sentences: what you found and whether you identified a likely root cause]
-
+THe database. Memory cpu and disk are fine.
 ## Process and Resource State[What you found. Be specific: process names, PIDs, memory/CPU figures]
-PID    MEM |PID     CPU
-6170   3.4%|28344   100
-28283  3.4%|6223    10.4
-22165  3.1%|2640    10
+pid 8054  3.4% RAM  05 CPU is the main consumer of memory but is idle
 ## Filesystem and Disk[Disk usage findings. Any large or unexpected files]
-Large log 271M  /var/log/kijanikiosk
+/var/log/kijanikiosk is the largest item with 271MB
 ## Log Analysis[Key log entries. When errors started. Error frequency. Any patterns]
-2024-01-15 04:07:55
-2024-01-15 04:08:01
-2024-01-15 04:08:01
-2024-01-15 06:22:18
-2024-01-15 06:22:23
-2024-01-15 06:22:28
-
+6 errors . errors startes at 03:45 ,also at 04;07 and  06:22
 ## Network and Service State[Port binding status. HTTP response time. TCP connection state]
-status code; HTTP 200 - 0.003721s | TCP DISTITBUTION; 7 LISTEN 7 ESTAB 1 State
-
+TCP states: 7 LISTEN, 4 CLOSE-WAIT, 2 ESTAB, 1 TIME-WAIT. nginx listening on port80
 ## Assessment
-[Your best hypothesis for the root cause of the latency increase]
+[the databse pool may have filled up]
 
 ## Recommended Next Steps[What should be done next. Maximum 3 actions, most important first]
