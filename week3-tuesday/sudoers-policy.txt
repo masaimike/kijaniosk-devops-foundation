@@ -1,0 +1,12 @@
+                                                                 /tmp/sudoers-pd1G65/sudoers                                                                          
+michael ALL=(root) NOPASSWD: /bin/systemctl restart kk-api 
+michael ALL=(root) NOPASSWD: /bin/systemctl restart kk-payments
+michael ALL=(root) NOPASSWD: /bin/systemctl restart kk-logs
+michael ALL=(root) NOPASSWD: /bin/systemctl status kk-api
+michael ALL=(root) NOPASSWD: /bin/systemctl status kk-payments
+michael ALL=(root) NOPASSWD: /bin/systemctl status kk-logs
+michael ALL=(root) NOPASSWD: /bin/journalctl -u kk-api
+michael ALL=(root) NOPASSWD: /bin/journalctl -u kk-payments
+michael ALL=(root) NOPASSWD: /bin/journalctl -u kk-logs
+michael ALL=(root) NOPASSWD: sudoedit /etc/nginx/nginx.conf
+
